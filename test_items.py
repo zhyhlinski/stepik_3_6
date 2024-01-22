@@ -1,3 +1,4 @@
+import selenium.webdriver.remote.webelement
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -12,3 +13,4 @@ def test_check_add_to_basket_form_presence(browser):
 
     add_to_basket_button = WebDriverWait(browser, TIMEOUT).until(EC.presence_of_element_located((By.ID,
                                                                                                  "add_to_basket_form")))
+    assert isinstance(add_to_basket_button, selenium.webdriver.remote.webelement.WebElement)
